@@ -1,0 +1,155 @@
+{% extends 'advisory/base.html' %}
+{% block content %}
+
+<style>
+/* Container */
+.chat-container {
+    max-width: 700px;
+    margin: auto;
+    padding: 15px;
+}
+
+/* Heading */
+.chat-heading {
+    color: #0a8a20;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+/* Chat Box */
+.chat-box {
+    height: 450px;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 15px;
+    border: 1px solid #b5e0b8;
+    box-shadow: 0 5px 20px rgba(0, 128, 0, 0.1);
+}
+
+/* User message */
+.msg-user {
+    background: #caffd1;
+    color: #000000; /* Black text */
+    padding: 10px 14px;
+    border-radius: 15px;
+    margin: 10px 0;
+    margin-left: 50px;
+    text-align: right;
+    border-right: 4px solid #2e7d32;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.msg-user:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Bot message */
+.msg-bot {
+    background: #f4fff2;
+    color: #000000; /* Black text */
+    padding: 10px 14px;
+    border-radius: 15px;
+    margin: 10px 0;
+    margin-right: 50px;
+    border-left: 4px solid #4caf50;
+    white-space: pre-line;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.msg-bot:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Typing indicator */
+.typing-indicator {
+    font-style: italic;
+    color: #4caf50;
+    margin: 6px 0;
+    animation: blink 1.2s infinite;
+}
+
+/* Animations */
+@keyframes blink {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+    .chat-box {
+        height: 380px;
+    }
+    .msg-user, .msg-bot {
+        font-size: 14px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+</style>
+
+<div class="container chat-container mt-4">
+    <h3 class="chat-heading text-center">🌾 Farm Assistant Chatbot</h3>
+    <p class="text-center text-muted">Ask about crops, soil, fertilizers, weather, or pest control.</p>
+
+    <div id="chat-box" class="chat-box mb-3">
+        <div class="msg-bot">
+            <strong>Bot:</strong> Hello! I'm your farming advisor. How can I help you today? 🌱
+        </div>
+    </div>
+
+    <form id="chat-form">
+        {% csrf_token %}
+        <div class="input-group">
+            <input type="text" id="user-input" class="form-control" placeholder="Type your question..." required>
+            <button class="btn btn-success" type="submit">Send</button>
+        </div>
+    </form>
+</div>
+
+<script>
+const form = document.getElementById('chat-form');
+const input = document.getElementById('user-input');
+const chatBox = document.getElementById('chat-box');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const message = input.value.trim();
+    if (!message) return;
+
+    // Add user message
+    chatBox.innerHTML += `<div class="msg-user fade-in"><strong>You:</strong> ${message}</div>`;
+    input.value = '';
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    // Typing indicator
+    const typingDiv = document.createElement('div');
+    typingDiv.classList.add('typing-indicator');
+    typingDiv.innerText = "Bot is typing...";
+    chatBox.appendChild(typingDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    // Send to backend
+    fetch("{% url 'chatbot' %}", {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `message=${encodeURIComponent(message)}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        typingDiv.remove();
+        const formattedReply = data.reply.replace(/\n/g, "<br>");
+        chatBox.innerHTML += `<div class="msg-bot fade-in"><strong>Bot:</strong> ${formattedReply}</div>`;
+        chatBox.scrollTop = chatBox.scrollHeight;
+    });
+});
+</script>
+
+{% endblock %}

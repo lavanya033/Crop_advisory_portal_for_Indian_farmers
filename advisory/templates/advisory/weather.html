@@ -1,0 +1,24 @@
+{% extends 'advisory/base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-success mb-4 text-center">🌦️ Current Weather Information</h2>
+
+    {% if weather.error %}
+        <div class="alert alert-warning text-center">{{ weather.error }}</div>
+    {% else %}
+        <div class="card mx-auto shadow" style="max-width: 500px;">
+            <div class="card-body">
+                <h4 class="card-title text-center">{{ weather.location }}</h4>
+                <p><strong>🌡️ Temperature:</strong> {{ weather.temperature }} °C</p>
+                <p><strong>🌤️ Condition:</strong> {{ weather.description }}</p>
+                <p><strong>💧 Humidity:</strong> {{ weather.humidity }}%</p>
+                <p><strong>🌬️ Wind Speed:</strong> {{ weather.wind_speed }} m/s</p>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="text-center mt-4">
+        <a href="{% url 'home' %}" class="btn btn-outline-primary">🔙 Back to Home</a>
+    </div>
+</div>
+{% endblock %}

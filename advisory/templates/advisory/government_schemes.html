@@ -1,0 +1,133 @@
+
+{% extends 'advisory/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+  <h2 class="text-center text-success mb-4">🇮🇳 Central Government Schemes for Farmers</h2>
+
+  <div class="accordion" id="schemeAccordion">
+
+    <!-- 1. PM-KISAN -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="pmkisan-heading">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pmkisan" aria-expanded="true">
+          🌾 PM-Kisan Samman Nidhi Yojana
+        </button>
+      </h2>
+      <div id="pmkisan" class="accordion-collapse collapse show" aria-labelledby="pmkisan-heading">
+        <div class="accordion-body">
+          <p><strong>Purpose:</strong> Provide income support to all landholding farmer families.</p>
+          <p><strong>Eligibility:</strong> Small and marginal farmers with cultivable land (up to 2 hectares).</p>
+          <p><strong>Benefits:</strong> ₹6,000 per year in three equal installments directly into the farmer’s bank account.</p>
+          <p><strong>Register here:</strong> <a href="https://pmkisan.gov.in/RegistrationForm.aspx" target="_blank">https://pmkisan.gov.in</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. PMFBY -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="pmfby-heading">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pmfby">
+          ☔ PM Fasal Bima Yojana (Crop Insurance)
+        </button>
+      </h2>
+      <div id="pmfby" class="accordion-collapse collapse" aria-labelledby="pmfby-heading">
+        <div class="accordion-body">
+          <p><strong>Purpose:</strong> Insurance against crop loss due to natural calamities.</p>
+          <p><strong>Eligibility:</strong> All farmers growing notified crops in notified areas.</p>
+          <p><strong>Benefits:</strong> Financial compensation for crop damage/loss at minimal premium cost.</p>
+          <p><strong>Register here:</strong> <a href="https://pmfby.gov.in/" target="_blank">https://pmfby.gov.in</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. eNAM -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="enam-heading">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#enam">
+          🧺 National Agriculture Market (eNAM)
+        </button>
+      </h2>
+      <div id="enam" class="accordion-collapse collapse" aria-labelledby="enam-heading">
+        <div class="accordion-body">
+          <p><strong>Purpose:</strong> Sell crops online across India to get better prices.</p>
+          <p><strong>Eligibility:</strong> All registered farmers, traders, and buyers.</p>
+          <p><strong>Benefits:</strong> Transparent and competitive online trading of crops.</p>
+          <p><strong>Register here:</strong> <a href="https://enam.gov.in/web/" target="_blank">https://enam.gov.in/web/</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Agri Infra Fund -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="aif-heading">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aif">
+          🏗️ Agriculture Infrastructure Fund (AIF)
+        </button>
+      </h2>
+      <div id="aif" class="accordion-collapse collapse" aria-labelledby="aif-heading">
+        <div class="accordion-body">
+          <p><strong>Purpose:</strong> Build cold storage, warehouses, food processing units, etc.</p>
+          <p><strong>Eligibility:</strong> Individual farmers, FPOs, cooperatives, PACs, startups.</p>
+          <p><strong>Benefits:</strong> Loans with interest subvention and credit guarantee support.</p>
+          <p><strong>Register here:</strong> <a href="https://agriinfra.dac.gov.in/" target="_blank">https://agriinfra.dac.gov.in</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Kisan Suvidha Portal -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="kisan-heading">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#kisan">
+          🌦️ Kisan Suvidha Portal
+        </button>
+      </h2>
+      <div id="kisan" class="accordion-collapse collapse" aria-labelledby="kisan-heading">
+        <div class="accordion-body">
+          <p><strong>Purpose:</strong> Provide weather, input dealers, market prices, and expert advisory.</p>
+          <p><strong>Eligibility:</strong> All farmers can access the platform.</p>
+          <p><strong>Benefits:</strong> Real-time agri information and alerts to plan better.</p>
+          <p><strong>Visit:</strong> <a href="https://www.kisansuvidha.gov.in" target="_blank">https://www.kisansuvidha.gov.in</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. mKisan Portal -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="mkisan-heading">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mkisan">
+          📱 mKisan SMS Portal
+        </button>
+      </h2>
+      <div id="mkisan" class="accordion-collapse collapse" aria-labelledby="mkisan-heading">
+        <div class="accordion-body">
+          <p><strong>Purpose:</strong> SMS updates to farmers in local languages.</p>
+          <p><strong>Eligibility:</strong> All Indian farmers.</p>
+          <p><strong>Benefits:</strong> Free expert advice, weather alerts, scheme updates by SMS.</p>
+          <p><strong>Register here:</strong> <a href="https://mkisan.gov.in/" target="_blank">https://mkisan.gov.in</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. CSC Services for Farmers -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="csc-heading">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#csc">
+          🏢 CSC Agri Services
+        </button>
+      </h2>
+      <div id="csc" class="accordion-collapse collapse" aria-labelledby="csc-heading">
+        <div class="accordion-body">
+          <p><strong>Purpose:</strong> One-stop access for PMFBY, Soil Health Card, KCC, land records, etc.</p>
+          <p><strong>Eligibility:</strong> All farmers with Aadhaar and bank account.</p>
+          <p><strong>Benefits:</strong> Apply offline/online at CSC centres for various schemes.</p>
+          <p><strong>Visit:</strong> <a href="https://www.csc.gov.in/" target="_blank">https://www.csc.gov.in</a></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<a href="{% url 'home' %}" class="btn btn-outline-primary">🔙 Back to Home</a>
+{% endblock %}

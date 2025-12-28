@@ -1,0 +1,150 @@
+{% extends 'advisory/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- 🔷 Register Section -->
+<section class="register-section py-5">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <!-- 🖼 Left Image -->
+    <div class="col-md-5 text-center mb-4 mb-md-0">
+      <img src="{% static 'advisory/images/register1.jpeg' %}" class="img-fluid rounded shadow" alt="Register Image" style="max-height: 750px; width: 80%; object-fit: cover;">
+    </div>
+
+      <!-- 🟩 Right Form -->
+      <div class="col-md-5">
+        <div class="card shadow p-4 register-card glass-effect">
+          <h3 class="text-center mb-4 text-success">Register</h3>
+
+          <!-- Form Errors -->
+          {% if form.errors %}
+          <div class="alert alert-danger">
+            <ul>
+              {% for field in form %}
+                {% for error in field.errors %}
+                  <li><strong>{{ field.label }}:</strong> {{ error }}</li>
+                {% endfor %}
+              {% endfor %}
+              {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+
+          <form method="POST" id="registrationForm">
+            {% csrf_token %}
+
+            <div class="mb-3">
+              <label for="username" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="password1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password1" name="password1" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="password2" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="password2" name="password2" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="mobile" class="form-label">Mobile Number</label>
+              <input type="tel" class="form-control" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+            </div>
+            <div class="mb-3">
+              <label for="location" class="form-label">Location (State)</label>
+              <select class="form-select" id="location" name="location" required>
+              <option style="color:black;" value="" selected disabled>Select State</option>
+              <option style="color:black;" value="Andhra Pradesh">Andhra Pradesh</option>
+              <option style="color:black;" value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option style="color:black;" value="Assam">Assam</option>
+              <option style="color:black;" value="Bihar">Bihar</option>
+              <option style="color:black;" value="Chhattisgarh">Chhattisgarh</option>
+              <option style="color:black;" value="Goa">Goa</option>
+              <option style="color:black;" value="Gujarat">Gujarat</option>
+              <option style="color:black;" value="Haryana">Haryana</option>
+              <option style="color:black;" value="Himachal Pradesh">Himachal Pradesh</option>
+              <option style="color:black;" value="Jharkhand">Jharkhand</option>
+              <option style="color:black;" value="Karnataka">Karnataka</option>
+              <option style="color:black;" value="Kerala">Kerala</option>
+              <option style="color:black;" value="Madhya Pradesh">Madhya Pradesh</option>
+              <option style="color:black;" value="Maharashtra">Maharashtra</option>
+              <option style="color:black;" value="Manipur">Manipur</option>
+              <option style="color:black;" value="Meghalaya">Meghalaya</option>
+              <option style="color:black;" value="Mizoram">Mizoram</option>
+              <option style="color:black;" value="Nagaland">Nagaland</option>
+              <option style="color:black;" value="Odisha">Odisha</option>
+              <option style="color:black;" value="Punjab">Punjab</option>
+              <option style="color:black;" value="Rajasthan">Rajasthan</option>
+              <option style="color:black;" value="Sikkim">Sikkim</option>
+              <option style="color:black;" value="Tamil Nadu">Tamil Nadu</option>
+              <option style="color:black;" value="Telangana">Telangana</option>
+              <option style="color:black;" value="Tripura">Tripura</option>
+              <option style="color:black;" value="Uttar Pradesh">Uttar Pradesh</option>
+              <option style="color:black;" value="Uttarakhand">Uttarakhand</option>
+              <option style="color:black;" value="West Bengal">West Bengal</option>
+              <option style="color:black;" value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+              <option style="color:black;" value="Chandigarh">Chandigarh</option>
+              <option style="color:black;" value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+              <option style="color:black;" value="Delhi">Delhi</option>
+              <option style="color:black;" value="Jammu and Kashmir">Jammu and Kashmir</option>
+              <option style="color:black;" value="Ladakh">Ladakh</option>
+              <option style="color:black;" value="Lakshadweep">Lakshadweep</option>
+              <option style="color:black;" value="Puducherry">Puducherry</option>
+              </select>
+              </div>
+              
+              
+              <div class="mb-3">
+              <label for="soil_type" class="form-label">Soil Type</label>
+              <select class="form-select" id="soil_type" name="soil_type" required>
+              <option style="color:black;" value="" selected disabled>Select Soil Type</option>
+              <option style="color:black;" value="Black">Black Soil</option>
+              <option style="color:black;" value="Red">Red Soil</option>
+              <option style="color:black;" value="Alluvial">Alluvial Soil</option>
+              <option style="color:black;" value="Laterite">Laterite Soil</option>
+              <option style="color:black;" value="Sandy">Sandy Soil</option>
+              <option style="color:black;" value="Loamy">Loamy Soil</option>
+              </select>
+              </div>
+              
+              
+              <div class="mb-3">
+              <label for="season" class="form-label">Current Season</label>
+              <select class="form-select" id="season" name="season" required>
+              <option style="color:black;" value="" selected disabled>Select Season</option>
+              <option style="color:black;" value="Kharif">🌧️ Kharif (Monsoon: June–October)</option>
+              <option style="color:black;" value="Rabi">🌾 Rabi (Winter: November–April)</option>
+              <option style="color:black;" value="Zaid">☀️ Zaid (Summer: March–June)</option>
+              </select>
+              </div>
+           
+            <button type="submit" class="btn btn-success w-100">Register</button>
+            <h6 class="mt-3 text-center">Already have an account? <a href="{% url 'login' %}" class="text-decoration-none text-success">Login here</a></h6>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.getElementById("registrationForm").addEventListener("submit", function (e) {
+    const pw1 = document.getElementById("password1").value;
+    const pw2 = document.getElementById("password2").value;
+    if (pw1 !== pw2) {
+      e.preventDefault();
+      alert("Passwords do not match!");
+    }
+  });
+</script>
+{% endblock %}

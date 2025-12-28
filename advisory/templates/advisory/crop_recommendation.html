@@ -1,0 +1,32 @@
+
+{% extends 'advisory/base.html' %}
+
+{% block content %}
+
+<div class="container text-center my-5">
+    <h2 class="mb-4 text-success">🌾 Recommended Crop</h2>
+
+    <div class="d-flex flex-column align-items-center gap-4">
+        {% if error_message %}
+            <p class="text-danger">{{ error_message }}</p>
+        {% else %}
+            {% for crop in crop_info %}
+                <div class="crop-card text-center p-4 rounded shadow">
+                    <h3 class="mb-3">{{ crop.name }}</h3>
+                    <p><strong>Soil Type:</strong> {{ crop.soil }}</p>
+                    <p><strong>Season:</strong> {{ crop.season }}</p>
+                    <p><strong>Location:</strong> {{ crop.location }}</p>
+                    <p><strong>Benefits:</strong> {{ crop.benefits }}</p>
+                    <p><strong>Recommended Fertilizer:</strong> {{ crop.fertilizer }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <!-- Back to Home Button -->
+    <div class="mt-4">
+        <a href="{% url 'home' %}" class="btn btn-outline-light">🔙 Back to Home</a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,533 @@
+/* ---------------------------
+   GLOBAL THEME
+----------------------------*/
+body.dark-theme {
+    background-color: #0b1e14;
+    color: #e8ffe8;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Smooth transitions */
+* {
+    transition: 0.3s ease-in-out;
+}
+
+/* ---------------------------
+   NAVBAR
+----------------------------*/
+.neon-navbar {
+    background-color: #1a3d24 !important; /* light green navbar */
+    border-bottom: 2px solid #00ff7f;
+    box-shadow: 0 4px 10px rgba(0, 255, 136, 0.4);
+}
+
+/* Navbar brand neon */
+.neon-navbar .navbar-brand.neon-text {
+    color: #b3ffb3 !important;
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-shadow: 0 0 8px #00ff7f;
+}
+
+.neon-navbar .navbar-brand.neon-text:hover {
+    color: #00ff7f !important;
+    text-shadow: 0 0 12px #00ff7f, 0 0 25px #00ff7f;
+    transform: scale(1.07);
+}
+
+/* Navbar links neon */
+.navbar-nav .nav-link.neon-link {
+    color: #d6ffd6 !important;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.navbar-nav .nav-link.neon-link:hover {
+    color: #00ff7f !important;
+    text-shadow: 0 0 10px #00ff7f;
+    border: 1px solid #00ff7f;
+    box-shadow: 0 0 12px #00ff7f;
+    transform: scale(1.05);
+}
+
+/* ---------------------------
+   NAVBAR ITEM SPACING
+----------------------------*/
+.navbar-nav .nav-item {
+    margin-left: 15px; /* space between each item */
+}
+
+.navbar-nav .nav-item:first-child {
+    margin-left: 0; /* no extra margin on the first item */
+}
+
+
+/* LOGIN & REGISTER BUTTONS */
+.nav-link.neon-button {
+    background-color: #00cc77 !important;
+    color: #002b17 !important;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 8px;
+}
+
+.nav-link.neon-button:hover {
+    background-color: #00ff88 !important;
+    color: #002b17 !important;
+    box-shadow: 0 0 15px #00ff88;
+    transform: scale(1.05);
+}
+
+/* DROPDOWN */
+.neon-dropdown {
+    background-color: rgba(0,50,20,0.85) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid #00ff7f;
+}
+
+.dropdown-item.neon-link:hover {
+    color: #00ff88 !important;
+    background-color: rgba(0,255,136,0.2) !important;
+}
+
+/* ---------------------------
+   DROPDOWN ITEM SPACING & NEON
+----------------------------*/
+.dropdown-menu .dropdown-item {
+    padding: 10px 20px; /* more spacing inside dropdown items */
+    margin: 5px 0;      /* space between items */
+    border-radius: 8px; /* rounded corners */
+    color: #d6ffd6;     /* default neon light green */
+    transition: 0.3s ease-in-out;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background: rgba(0, 255, 136, 0.2); /* neon glow background */
+    color: #00ff7f !important;          /* neon text on hover */
+    box-shadow: 0 0 12px #00ff7f;
+    transform: scale(1.05);
+}
+
+/* ---------------------------
+   CONTENT WRAPPER
+----------------------------*/
+.content-wrapper {
+    background-color: rgba(0, 40, 20, 0.4);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(0,255,136,0.25);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(0,255,136,0.2);
+}
+
+/* ---------------------------
+   FOOTER
+----------------------------*/
+.neon-footer {
+    background-color: #1a3d24 !important; /* light green footer */
+    border-top: 2px solid #00ff7f;
+    color: #b3ffb3 !important;
+    box-shadow: 0 -2px 10px rgba(0, 255, 136, 0.3);
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.neon-footer p {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ---------------------------
+   BUTTONS & FORMS
+----------------------------*/
+.btn-primary {
+    background-color: #00cc77 !important;
+    border: none;
+    color: #002b17 !important;
+}
+
+.btn-primary:hover {
+    background-color: #00ff88 !important;
+    box-shadow: 0 0 15px #00ff88;
+    color: #002b17 !important;
+}
+
+.form-control, .form-select {
+    background: rgba(255,255,255,0.08);
+    color: #e8ffe8;
+    border: 1px solid #00ff88;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #00ff88;
+    box-shadow: 0 0 12px #00ff88;
+    background: rgba(255,255,255,0.15);
+}
+
+/* ---------------------*
+
+
+/* home.css */
+
+/* ---------------------------
+   GLOBAL STYLES
+----------------------------*/
+body.dark-theme {
+    background: #151e0b; /* Deep dark green background */
+    font-family: 'Poppins', sans-serif;
+    color: #e8ffe8;
+    overflow-x: hidden;
+}
+
+/* Smooth transitions */
+* {
+    transition: 0.3s ease-in-out;
+}
+
+/* ---------------------------
+   HERO SECTION
+----------------------------*/
+.hero-section {
+    margin-bottom: 80px; /* gap below hero */
+    position: relative;
+}
+
+.hero-section .overlay {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-text .text-shadow {
+    text-shadow: 0 0 8px #00ff7f;
+}
+
+/* ---------------------------
+   ABOUT SECTION
+----------------------------*/
+#about {
+    margin-bottom: 80px; /* gap below about */
+}
+
+#about .glass-effect {
+    background: rgba(0, 50, 20, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 255, 136, 0.25);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+/* ---------------------------
+   FEATURE CARDS
+----------------------------*/
+#features {
+    margin-bottom: 80px; /* space below features */
+}
+
+.feature-card {
+    background: rgba(0, 40, 20, 0.4);
+    border: 1px solid #00ff88;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #ffffff; /* white text inside all feature cards */
+}
+
+.feature-card .card-title {
+    color: #00ff88; /* neon green heading */
+}
+
+.feature-card .card-text {
+    color: #ffffff; /* white text */
+}
+
+.feature-card .card-body p {
+    margin-bottom: 15px;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 255, 136, 0.4);
+}
+
+/* Gap between feature cards */
+.row.g-4 > .col-md-3 {
+    margin-bottom: 40px;
+}
+
+/* ---------------------------
+   CHATBOT CARD
+----------------------------*/
+.feature-card.text-center {
+    color: #ffffff; /* white text */
+}
+
+.feature-card.text-center h5 {
+    color: #00ff88; /* neon heading */
+}
+
+.feature-card.text-center p {
+    margin-bottom: 15px;
+}
+
+/* ---------------------------
+   BUTTONS
+----------------------------*/
+.btn-primary {
+    background: #00cc77;
+    border: none;
+    color: #002b17;
+}
+
+.btn-primary:hover {
+    background: #00ff88;
+    color: #002b17;
+    box-shadow: 0 0 12px #00ff88;
+    transform: scale(1.05);
+}
+
+.btn-outline-success {
+    border-color: #00ff88;
+    color: #00ff88;
+}
+
+.btn-outline-success:hover {
+    background: #00ff88;
+    color: #002b17;
+    transform: scale(1.05);
+}
+
+/* ---------------------------
+   IMAGES
+----------------------------*/
+#about img {
+    max-height: 300px;
+    border-radius: 10px;
+}
+
+/* ---------------------------
+   MISC
+----------------------------*/
+/* Alert spacing */
+.alert {
+    margin-top: 20px;
+}
+
+/* Card min-height */
+.feature-card .card {
+    min-height: 350px;
+}
+
+
+/* ---------------------------
+   FAQ SECTION
+----------------------------*/
+#faq {
+    margin-bottom: 80px; /* space after FAQ section */
+}
+
+#faq .accordion-item {
+    background: rgba(0, 50, 20, 0.6); /* glass effect */
+    border: 1px solid #00ff88;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    backdrop-filter: blur(12px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#faq .accordion-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #00ff88;
+}
+
+/* Accordion button (question) */
+#faq .accordion-button {
+    background: rgba(0, 50, 20, 0.6);
+    color: #00ff88;
+    font-weight: 500;
+}
+
+#faq .accordion-button:not(.collapsed) {
+    background: rgba(0, 50, 20, 0.8);
+    color: #00ff88;
+}
+
+/* Answers (accordion-body) */
+#faq .accordion-body {
+    background: rgba(0, 40, 20, 0.5); /* slightly different shade */
+    color: #ffffff !important; /* ensures answers are white */
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Accordion arrow color */
+#faq .accordion-button::after {
+    filter: invert(1); /* makes the arrow neon-friendly on dark background */
+}
+
+/* Optional: Add spacing inside answers */
+#faq .accordion-body p {
+    margin-bottom: 10px;
+}
+
+
+
+
+/* register.css */
+
+/* REGISTER PAGE SPLIT LAYOUT */
+.register-section {
+    min-height: 80vh;
+}
+
+.register-card {
+    background: rgba(0, 50, 20, 0.7);
+    border-radius: 15px;
+    border: 1px solid #00ff88;
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+}
+
+.register-card .form-control,
+.register-card .form-select {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border: 1px solid #00ff88;
+}
+
+.register-card .form-control:focus,
+.register-card .form-select:focus {
+    border-color: #00ff88;
+    box-shadow: 0 0 12px #00ff88;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.register-card .btn-success {
+    background: #00cc77;
+    color: #002b17;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.register-card .btn-success:hover {
+    background: #00ff88;
+    box-shadow: 0 0 12px #00ff88;
+    color: #002b17;
+    transform: scale(1.05);
+}
+
+
+/* LEFT IMAGE HOVER EFFECT */
+.register-section img {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    border-radius: 15px;
+}
+
+.register-section img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 255, 136, 0.4);
+}
+
+
+/* login page */
+
+/* ---------------------------
+   LOGIN PAGE
+----------------------------*/
+
+.login-section {
+    min-height: 80vh; /* increase page height */
+}
+
+/* Login card with hover glow effect */
+.login-card {
+    border-radius: 15px;
+    padding: 30px 20px;
+    background: rgba(0, 40, 20, 0.5);
+    color: #fff;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    transition: all 0.3s ease;
+}
+
+.login-card:hover {
+    border: 1px solid #00ff88;
+    box-shadow: 0 0 20px #00ff88;
+    transform: translateY(-5px);
+}
+
+/* Login image hover effect */
+.login-image {
+    transition: transform 0.5s ease, box-shadow 0.5s ease, border 0.3s ease;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.login-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 255, 136, 0.5);
+    border: 1px solid #00ff88;
+}
+
+/* Form controls hover/focus glow */
+.login-card .form-control {
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.login-card .form-control:focus,
+.login-card .form-control:hover {
+    border-color: #00ff88;
+    box-shadow: 0 0 12px #00ff88;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+/* Button hover */
+.login-card .btn-success:hover {
+    background: #00ff88;
+    color: #002b17;
+    box-shadow: 0 0 12px #00ff88;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+
+
+/* crop recommend */
+
+/* CROP RECOMMENDATION CARD */
+.crop-card {
+    background: #ffffff; /* white background */
+    color: #000000; /* black text for readability */
+    border: 2px solid #00cc77; /* neon green border for premium effect */
+    max-width: 500px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.crop-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #00ff88; /* neon green glow on hover */
+}
+
+.crop-card h3 {
+    color: #00cc77; /* green heading */
+    margin-bottom: 10px;
+}
+
+.crop-card p {
+    color: #000000; /* black text */
+    margin-bottom: 8px;
+}
+
+.btn-success {
+    background-color: #00cc77;
+    border: none;
+    color: #ffffff;
+}
+
+.btn-success:hover {
+    background-color: #00ff88;
+    color: #002b17;
+    box-shadow: 0 0 10px #00ff88;
+}
