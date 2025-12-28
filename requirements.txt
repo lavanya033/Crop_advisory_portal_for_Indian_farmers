@@ -23,7 +23,7 @@ numpy==2.2.6
 openai==2.7.2
 packaging==25.0
 pandas==2.3.3
-Pillow==10.0.0
+Pillow==10.4.0
 pydantic==2.12.4
 pydantic_core==2.41.5
 pyparsing==3.2.3
